@@ -1,0 +1,56 @@
+body
+{
+    margin: 0;
+    height: 100vh;
+}
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    grid-template-rows: 1fr 4fr 3fr 2fr;
+    grid-template-areas: 
+        "main    main    header"
+        "main    main    logo"
+        "nom     yum     logo"
+        "nom     yum     logo";
+    height: 100vh;
+    margin: 2em;
+}
+
+main
+{
+    grid-area: main;
+    background: #fffadf;
+}
+
+section.nom
+{
+    grid-area: nom;
+    background: #c6e3a6;
+}
+
+section.yum
+{
+    grid-area: yum;
+    background: #333333;
+}
+
+header
+{
+    grid-area: header;
+    background: #fffadf;
+}
+
+.logo
+{
+    grid-area: logo;
+    background: url('../logo.png') no-repeat;
+    background-size: cover;
+}
+
+.campo
+{
+    height: 0vh;
+    margin: 2em;
+}
