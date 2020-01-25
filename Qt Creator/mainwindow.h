@@ -8,6 +8,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QUrl>
+#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;
@@ -19,10 +20,12 @@ class MainWindow : public QMainWindow
 
     QSerialPort serial;
 
+    int num_modo;
+
     QString luminosidade;
     QString umidade_Solo;
-    int modo;
     QString status_valvula;
+
 
 
 public:
@@ -34,15 +37,14 @@ private slots:
     void dadosRecebidos();
     void on_btnPlug_clicked();
     void on_btnModo_Activated(const QString &arg1);
-
-//    void on_cBox_serial_activated(const QString &arg1);
+    void on_btnLigaDesliga_clicked();
 
 private:
     Ui::MainWindow *ui;
     bool plugStatus = false;
     QString text[2] = {
 
-        "No modo automático, o CASIE utiliza sensores de umidade de solo, de luminosidade, de temperatura do ar e de umidade do ar",
+        "No modo automático, o CASIE utiliza sensores de umidade de solo e de luminosidade",
         "No manual, o acionamento é opcional do usuário"
     };
 

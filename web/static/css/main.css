@@ -12,8 +12,8 @@ body
     grid-template-areas: 
         "main    main    header"
         "main    main    logo"
-        "nom     yum     logo"
-        "nom     yum     logo";
+        "lum     umi     logo"
+        "a       a       logo";
     height: 100vh;
     margin: 2em;
 }
@@ -24,16 +24,22 @@ main
     background: #fffadf;
 }
 
-section.nom
+section.lum
 {
-    grid-area: nom;
+    grid-area: lum;
     background: #c6e3a6;
 }
 
-section.yum
+section.umi
 {
-    grid-area: yum;
+    grid-area: umi;
     background: #333333;
+}
+
+section.a 
+{
+    grid-area: a;
+    background: black;
 }
 
 header

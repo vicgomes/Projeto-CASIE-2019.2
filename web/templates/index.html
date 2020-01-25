@@ -57,12 +57,6 @@
             if("UMIDADE_SOLO" in json){
                 document.getElementById("umidade_solo").innerHTML = json["UMIDADE_SOLO"]
             }
-            if("MODO" in json){
-                document.getElementById("modo").innerHTML = json["MODO"]
-            }
-            if("STATUS_VALVULA" in json){
-                document.getElementById("status_valvula").innerHTML = json["STATUS_VALVULA"]
-            }
         }
     </script>
 
@@ -70,25 +64,38 @@
 
         <main>
             <h3> Sobre o projeto: </h3>
-            <div class="intro" style="text-align: center;">
-                <p>popo</p>
+            <div class="intro" style="text-align:center;">
+                <p>
+                    CASIE, é um projeto desenvolvido para disciplina de Técnicas de Programação, 
+                    por alunos do curso bacharelado de Engenharia Elétrica, do Instituto Federal
+                    da Paraiba (IFPB), do campus de João Pessoa. Que tem como principal função, 
+                    ser um sistema de irrigação controlada de forma automática, que visa regar as
+                    plantas de acordo com o estado em que essas se encontram, tal como a umidade
+                    do solo e a luminosidade.
+                </p>
+                <p>
+                    Para mais informações, acesse: 
+                </p>
             </div>
         </main>
-        <section class="nom">
-            nom
+        <section class="lum">
+            <h3>LUMINOSIDADE</h3>
+            <p id="luminosidade">
+                0
+            </p>
         </section>
-        <section class="yum">
-            yum
+        <section class="umi">
+            <h3>UMIDADE_SOLO</h3>
+            <p id="umidade_solo">
+                0
+            </p>
         </section>
+        <section class="a"></section>
         <header>
             header
         </header>
         <div class="logo"></div>
         
-    </div>
-    
-    <div class="campo" style="text-align: center;">
-        <img src="../static/irrigacao.jpg">
     </div>
     
 </body>

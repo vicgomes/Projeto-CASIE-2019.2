@@ -10,9 +10,7 @@ CORS(app)
 
 info = {
 	"LUMINOSIDADE":"",
-	"UMIDADE_SOLO":"",
-	"MODO":"",
-    "STATUS_VALVULA":""
+	"UMIDADE_SOLO":""
 }
 
 

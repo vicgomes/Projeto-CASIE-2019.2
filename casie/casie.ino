@@ -6,8 +6,6 @@
 const char* WIFI  = "ESP32";
 const char* CHAVE = "senhacriativa";
 
-uint32_t temporizador = 0;
-
 INTERLOCUTOR interlocutor(WIFI, CHAVE);
 Higrometro_object sensor_umidade(34);
 LDR_object sensorLDR(32);
@@ -19,7 +17,7 @@ Valvula solenoide(12);                   // relé para a válvula
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   interlocutor.inicializador_web();
   interlocutor.set_velocidades(500,500);
@@ -29,6 +27,7 @@ void loop()
 {
   sensorLDR.ler();
   sensor_umidade.ler();
+  interlocutor.vigia(sensorLDR, sensor_umidade, solenoide);
   
   switch(interlocutor.get_modo())
   {

@@ -14,7 +14,7 @@ class INTERLOCUTOR
 public:
     INTERLOCUTOR(const char* nome, const char* chave);
     
-    byte get_modo();
+    int get_modo();
 
     void vigia(LDR_object sensorLDR, Higro_object sensor_umidade, Valvula solenoide);
     void ler_json(string json);
@@ -26,7 +26,7 @@ public:
 
 private:
     HTTPClient _http;
-    byte _modo;
+    int _modo;
 
     char* REDE;
     char* SENHA;
