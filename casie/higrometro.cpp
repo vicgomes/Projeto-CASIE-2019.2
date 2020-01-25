@@ -14,10 +14,10 @@ int Higro_object::get_pino()
 
 void Higro_object::ler()
 {
-    umidade_solo = analogRead(get_pino());
+    umidade = analogRead(get_pino());
 }
 
-float Higro_object::umidade_solo()
+float Higro_object::valor_umidade_solo()
 {
-    return umidade_solo;
+    return umidade;
 }

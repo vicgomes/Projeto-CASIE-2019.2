@@ -2,7 +2,7 @@
 #ifndef HIGROMETRO_H
 #define HIGROMETRO_H
 
-#include <Arduino.h>
+#include "Arduino.h"
 
 class Higro_object
 {
@@ -12,11 +12,11 @@ public:
 
     int get_pino();
     void ler();
-    float umidade_solo();
+    float valor_umidade_solo();
 
 private:
     int pino;
-    float umidade_umidade;
+    float umidade;
 };
 
 #endif

@@ -1,15 +1,15 @@
-#include <interlocutor.h>
-#include <higrometro.h>
-#include <sensor_LDR.h>
-#include <valvula.h>
+#include "interlocutor.h"
+#include "higrometro.h"
+#include "sensor_LDR.h"
+#include "valv.h"
 
 const char* WIFI  = "ESP32";
 const char* CHAVE = "senhacriativa";
 
-INTERLOCUTOR interlocutor(WIFI, CHAVE);
-Higrometro_object sensor_umidade(34);
+Interlocutor interlocutor(WIFI, CHAVE);
+Higro_object sensor_umidade(34);
 LDR_object sensorLDR(32);
-Valvula solenoide(12);                   // relé para a válvula
+Valvula solenoide(12);
 
 #define LUM_MIN 15
 #define UMIDADE_SOLO_MIN 400
@@ -24,7 +24,7 @@ void setup()
 }
 
 void loop()
-{
+{ 
   sensorLDR.ler();
   sensor_umidade.ler();
   interlocutor.vigia(sensorLDR, sensor_umidade, solenoide);
@@ -54,18 +54,18 @@ void automatico()
   else if(sensorLDR.valor_LDR() > 15)
   {
     
-    if(sensor_umidade.umidade_solo() < UMIDADE_SOLO_MIN)
+    if(sensor_umidade.valor_umidade_solo() < UMIDADE_SOLO_MIN)
     {
       solenoide.desativar();
     }
     
-    else if(sensor_umidade.umidade_solo() > UMIDADE_SOLO_MAX)
+    else if(sensor_umidade.valor_umidade_solo() > UMIDADE_SOLO_MAX)
     {
       solenoide.desativar();
     }
     
-    else if(sensor_umidade.umidade_solo() > UMIDADE_SOLO_MIN and
-            sensor_umidade.umidade_solo() < UMIDADE_SOLO_MAX)
+    else if(sensor_umidade.valor_umidade_solo() > UMIDADE_SOLO_MIN and
+            sensor_umidade.valor_umidade_solo() < UMIDADE_SOLO_MAX)
     {
       solenoide.ativar();
     }

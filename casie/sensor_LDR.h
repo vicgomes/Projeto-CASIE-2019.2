@@ -1,7 +1,7 @@
 #ifndef SENSOR_LDR_H
 #define SENSOR_LDR_H
 
-#include <Arduino.h>
+#include "Arduino.h"
 
 class LDR_object
 {
@@ -14,7 +14,7 @@ public:
     int valor_LDR();
 
 private:
-    int _pino;
+    int pino;
     int luminosidade;
 };
 

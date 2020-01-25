@@ -21,4 +21,3 @@ int LDR_object::valor_LDR()
 {    
     return luminosidade;
 }
-
